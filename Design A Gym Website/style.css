@@ -1,0 +1,829 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary-color: #111317;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light: #35373b;
+    --secondary-color: #f9ac54;
+    --secondary-color-dark: #d79447;
+    --text-light: #d1d5db;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+/* reset */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--primary-color);
+}
+
+/* codigo header (nav) */
+
+.section_container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.section_header {
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--white);
+}
+
+.section_subheader {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.btn {
+    padding: 1rem 2rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color-dark);
+}
+
+
+img {
+    width: 100%;
+    display: flex;
+}
+
+.bg_blur {
+    position: absolute;
+    box-shadow: 0 0 1000px 50px var(--secondary-color);
+    z-index: -1;
+}
+
+nav {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.nav_logo {
+    max-width: 150px;
+}
+
+.nav_links {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    /* border: 1px solid red; */
+}
+
+.link a {
+    position: relative;
+    padding-bottom: 0.75rem;
+    color: var(--white);
+    /* border: 1px solid blue; */
+}
+
+.link a::after {
+    content: "";
+    position: absolute;
+    /* border: 4px solid red; */
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--secondary-color);
+    transition: 0.3s;
+}
+
+.link a:hover::after {
+    width: 50%;
+}
+
+.header_container {
+    position: relative;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.header_container::before {
+    content: "FITNESS";
+    position: absolute;
+    bottom: 5rem;
+    right: 20rem;
+    font-size: 10rem;
+    font-weight: 700;
+    line-height: 7rem;
+    color: var(--white);
+    opacity: 0.05;
+    z-index: -1;
+}
+
+.header_blur {
+    bottom: 5rem;
+    right: 0;
+}
+
+.header_content h4 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.header_content h1 {
+    margin-bottom: 1rem;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 6rem;
+    color: var(--white);
+}
+
+.header_content h1 span {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--white);
+}
+
+.header_content p {
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.header_image {
+    position: relative;
+
+}
+
+.header_image::before {
+    content: 'o';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40rem;
+    font-weight: 400;
+    line-height: 20rem;
+    color: var(--secondary-color);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.header_image img {
+    max-width: 350px;
+    margin: auto;
+}
+
+/* section */
+.explore_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.explore_nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.explore_nav span {
+    padding: 0 6px;
+    font-size: 1.5rem;
+    color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 100%;
+    cursor: pointer;
+    transform: 0.3s;
+}
+
+.explore_nav span:hover {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.explore_grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.explore_card {
+    padding: 1rem;
+    background-color: var(--primary-color-light);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.explore_card:hover {
+    background-color: var(--primary-color-extra-light);
+    border-color: var(--secondary-color);
+}
+
+.explore_card span {
+    display: inline-block;
+    padding: 2px 9px;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    color: var(--white);
+    background-color: var(--secondary-color-dark);
+    border-radius: 5px;
+}
+
+.explore_card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 0.5rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.explore_card p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.explore_card a {
+    color: var(--white);
+    transform: .3s;
+}
+
+.explore_card a:hover {
+    color: var(--secondary-color);
+}
+
+.class_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1rf);
+    gap: 2rem;
+}
+
+.class_image {
+    position: relative;
+}
+
+.group {
+    display: flex;
+}
+
+.group2 {
+    display: flex;
+    gap: 40px;
+}
+
+.class_image .class_img-1 {
+    position: relative;
+    right: 0;
+    top: 0;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.class_image .class_img-2 {
+    position: relative;
+    left: -100px;
+    bottom: 100px;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.class_content {
+    padding: 2rem 0;
+}
+
+.class_container .section_header {
+    text-align: left;
+    max-width: 400px;
+}
+
+.class_content p {
+    margin-bottom: 4rem;
+    color: var(--text-light);
+    max-width: 40rem;
+}
+
+
+/* seção 2 */
+
+.join_image {
+    margin-top: 4rem;
+    position: relative;
+    display: flex;
+    /* border: 1px solid white; */
+}
+
+.join_image img {
+    border-radius: 10px;
+}
+
+.join_grid {
+    position: absolute;
+    bottom: -5rem;
+    width: calc(100% - 4rem);
+    padding: 2rem;
+    margin: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: var(--primary-color-light);
+    border-radius: 10px;
+    /* border: 1px solid red; */
+
+}
+
+.join_card {
+    flex: 1 1 250px;
+    /* border: 1px solid white; */
+    align-items: center;
+    gap: 1rem;
+    /* border: 1px solid blue; */
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.join_card span {
+    padding: 5px 12px;
+    font-size: 1.75rem;
+    color: var(--white);
+    background-color: var(--secondary-color-dark);
+    border-radius: 5px;
+}
+
+.join_card-2 span {
+    padding: 5px 12px;
+    font-size: 1.75rem;
+    color: var(--white);
+    background-color: var(--secondary-color-dark);
+    border-radius: 5px;
+}
+
+
+.join_card h4 {
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.join_card p {
+    color: var(--text-light);
+}
+
+
+.price_grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.price_card{
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color-light);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s;
+    
+}
+
+.price_card:hover{
+    background-color: var(--primary-color-extra-light);
+    border-color: var(--secondary-color);
+}
+
+.price_card_content{
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+.price_card h4{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.price_card h3{
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--white);
+    border-bottom: 2px solid var(--white);
+}
+
+
+.price_card p{
+    margin-bottom: .75rem;
+    color: var(--white);
+}
+
+.price_card p i{
+    margin-right: .5rem;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.price_btn{
+    color: var(--secondary-color);
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+}
+
+.price_btn:hover{
+    color: var(--white);
+    background-color: var(--secondary-color);
+}
+
+/* section 5 */
+
+.review{
+    background-color: var(--primary-color-extra-light);
+}
+
+.review_container{
+    display: flex;
+    gap: 2rem;
+}
+
+.review_container > span{  /*(>) indica que essa estilização vai pegar apenas no primeiro span*/
+    font-size: 6rem;
+    color: var(--secondary-color);
+    opacity: 0.5;
+}
+
+.review_content{
+    flex: 1;
+}
+
+.review_content h4{
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color:  var(--white);
+}
+
+.review_content p{
+    max-width: 800px;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+
+.review_rating{
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.review_footer {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.review_member{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.review_member img{
+    max-width: 60px;
+    border-radius: 100%;
+}
+
+.review_member_details h4{
+    margin-bottom: 0;
+}
+
+.review_nav{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.review_nav span{
+    font-size: 2rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.review_nav span i{
+    transition: all 0.3s ease-out;
+}
+
+.review_nav span i:hover{
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* footer */
+.footer_container{
+    position: relative;
+    display: grid;
+    grid-template-columns: 400px repeat(0,1fr); /*explo abaixo*/
+    gap: 2rem;
+    /* width: 100%; */
+    /* border: 1px solid red; */
+}
+
+.footer_blur{
+    bottom: 0;
+    right: 0;
+}
+
+.footer_logo{
+    max-width: 400px;
+    margin-bottom: 2rem;
+}
+
+.footer_col-1{
+    display: flex;
+    /* gap: 15rem; */
+    justify-content: space-between;
+    /* border: 1px solid blue; */
+    /* max-width: 400px; */
+    width: 100%;
+    
+}
+
+.footer_section{
+    max-width: 150px;
+    margin-bottom: 2rem;
+    line-height: 50px;
+}
+
+.footer_logo{
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    /* border: 1px solid red; */
+    width: 100%;
+    
+}
+
+.footer_logo img{
+    max-width: 150px;
+    margin-bottom: 3.5rem;
+}
+
+.footer_logo > p{   
+    margin-bottom: 4rem;
+    line-height: 3rem;
+}
+
+.footer_socials{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer_socials a{
+    padding: 5px 10px;
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 100%;
+    transition: 0.3s;
+}
+
+.footer_socials a:hover{
+    color: var(--white);
+    background-color: var(--secondary-color);
+}
+
+.footer_col-1 h4 {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.footer_col-1  a{
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    transition: 0.3s;
+}
+
+
+.footer_col-1  a:hover{
+    color: var(--secondary-color);
+}
+
+.footer_bar{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: var(--white);
+}
+
+
+/* media Queries */
+
+@media (width < 900px){
+    .nav_links{
+        display: none;
+    }
+
+    .header_container{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .header_image{
+        grid-area: 1/1/2/2;
+    }
+
+    .explore_grid{
+        grid-template-columns: repeat(2,1fr);
+        gap: 1rem;
+    }
+
+    .class_container{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .class_image{
+        min-height: 500px;
+    }
+
+    .price_grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .review_container{
+        gap: 2rem;
+    }
+
+    .footer_container{
+        grid-template-columns: 1fr 200px;
+    }
+
+}
+
+
+@media (width < 600px){
+    .explore_header{
+        flex-direction: column;
+    }
+
+    .explore_grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .join_container{
+        margin-bottom: 15rem;
+    }
+
+    .join_grid{
+        width: 100%;
+        margin: 0;
+        bottom: -20rem;
+    }
+
+    .price_grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .review_container{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .review_footer{
+        flex-direction: column;
+    }
+
+    .footer_container{
+        grid-template-columns: 1fr 150px;
+    }
+
+    .footer_bar{
+        text-align: center;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media  */
+
+/* grid-area: 1/1/2/2; */
+/* 
+Essa propriedade no CSS é utilizada para definir a área de um item dentro de um grid, seguindo a seguinte sintaxe: grid-area: linha de início / coluna de início / linha de fim / coluna de fim. 
+
+No caso do exemplo grid-area: 1/1/2/2;, está sendo definido que o item ocupará a área que vai da linha 1 à linha 2 e da coluna 1 à coluna 2 dentro do grid. Isso ajuda a organizar o layout de maneira mais específica e precisa, determinando exatamente em qual região do grid o elemento deve ser posicionado. 
+
+Essa propriedade é muito útil principalmente em layouts mais complexos, onde é necessário ter um controle mais preciso sobre a disposição dos elementos na página. */
+
+
+
+
+
+
+/*--------------------------------------------------------------------------*/
+
+/*grid-template-columns: 400px repeat(3,1fr);*/
+
+/* Essa propriedade é utilizada no CSS para definir a largura das colunas de um grid. No exemplo dado, a largura da primeira coluna será de 400px e as outras três colunas terão largura igual, ocupando o espaço restante disponível no grid. A função `repeat(3,1fr)` serve para repetir a unidade de medida `1fr` três vezes, o que garante que as três colunas posteriores terão largura igual e se ajustarão automaticamente ao tamanho do grid. */
+
+
+
+
+ /*-------------------------------------------------------------------------*/
+/* flex-direction: column; */
+
+/* A propriedade flex-direction: column; serve para definir a direção dos elementos dentro de um container flexível. Ao utilizar essa propriedade, os elementos serão empilhados em uma coluna, ou seja, um embaixo do outro, em vez de em uma linha. Isso é útil para criar layouts verticais em um site ou aplicativo. */
+
+
+
+
+/*--------------------------------------------------------------------------*/
+
+/* flex: 1 1 250px; */
+
+/* A propriedade flex: 1 1 250px; é usada para definir o comportamento de um item dentro de um contêiner flexível (display:flex).
+
+Os três valores representam:
+
+flex-grow: define se o item pode crescer para preencher o espaço restante no contêiner. No caso de flex: 1, o item pode crescer.
+flex-shrink: define se o item pode diminuir de tamanho caso o espaço seja reduzido. No caso de flex: 1, o item pode encolher.
+flex-basis: define o tamanho inicial do item antes de calcular o crescimento ou a redução. No caso de flex: 1 1 250px;, o item tem um tamanho inicial de 250px.
+Portanto, essa propriedade permite que o item cresça e encolha conforme necessário, mantendo um tamanho inicial de 250px. */
+
+
+
+
+/*-------------------------------------------------------------------------*/
+
+/* flex-wrap: wrap; */
+
+/* A propriedade flex-wrap: wrap; no CSS é utilizada para definir se os itens dentro de um container flexível devem se ajustar automaticamente ao tamanho do container, fazendo com que os itens sejam reorganizados e quebrem linhas conforme necessário para evitar que o conteúdo transborde para fora do container. Essa propriedade facilita a criação de layouts responsivos e flexíveis, garantindo que o conteúdo se ajuste de acordo com o tamanho da tela ou do container pai. */
+
+
+
+/* ----------------------------------------------------------------------- */
+/* position relative  */
+
+/* O position relative no CSS serve para alterar o posicionamento de um elemento em relação à sua posição original. Quando aplicado a um elemento, o position relative permite que você o mova com relação ao seu posicionamento normal, sem afetar o layout dos outros elementos ao seu redor. Isso é útil para posicionar elementos de forma mais precisa em um layout e criar designs mais complexos. */
+
+/* ------------------------------------------------------------------------ */
+
+/* content: "";*/
+/* 
+O content: ""; no CSS é uma propriedade usada para incluir conteúdo adicional em um elemento HTML, como um pseudo-elemento. Essa propriedade é comumente usada em pseudo-elementos como ::before e ::after para adicionar conteúdo antes ou depois do conteúdo real do elemento.
+
+O valor content: ""; é usado para adicionar conteúdo vazio ou sem texto ao elemento. Isso pode ser útil para adicionar elementos visuais, como ícones ou formas, sem ter que adicionar conteúdo extra ao HTML.
+
+Em resumo, o content: ""; no CSS serve para adicionar conteúdo adicional a um elemento sem precisar modificar o HTML e é útil para adicionar elementos visuais como ícones, formas ou texto, antes ou depois do conteúdo real do elemento. */
+
+/* ------------------------------------------------------------------------ */
